@@ -22,7 +22,7 @@ discover our project tree.
 
 `/data/data/<pkg>/...` is app-private — by design only our process can
 read/write it. The system-level mechanism for "expose private files to
-the user via the system picker" is `android.provider.DocumentsProvider`.
+the architect via the system picker" is `android.provider.DocumentsProvider`.
 You subclass it, register in the manifest with the
 `DOCUMENTS_PROVIDER` intent filter and `MANAGE_DOCUMENTS` permission,
 and the system DocumentsUI surfaces your provider's roots in the
@@ -113,7 +113,7 @@ never runs. The Termux-bootstrap extractor lives there and so do our
 env-setup `std::fs::create_dir_all(&home)` calls. So a cold provider
 query finds no `~` dir.
 
-If `queryRoots` returns empty here, the user sees "Zed" in the SAF
+If `queryRoots` returns empty here, the architect sees "Zed" in the SAF
 sidebar with a blank inside on tap — and on some Android versions the
 system caches the empty root and stops surfacing the provider until
 next reboot. Bad UX.

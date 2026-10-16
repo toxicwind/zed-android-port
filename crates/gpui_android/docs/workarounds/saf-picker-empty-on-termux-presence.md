@@ -57,7 +57,7 @@ failure for the lifetime of the provider process.
 
 ## Recovery (manual)
 
-If a user reports the SAF picker on Android 13+ with Termux installed
+If an architect reports the SAF picker on Android 13+ with Termux installed
 showing **"No items / Can't use this folder"** regardless of which
 sidebar entry they tap and what initial URI is set:
 
@@ -68,7 +68,7 @@ adb shell pm enable com.termux
 
 Or via the device UI: Settings → Apps → Termux → Disable → re-enable.
 
-**Don't uninstall Termux** — the user's `$HOME` lives in the package
+**Don't uninstall Termux** — the architect's `$HOME` lives in the package
 data and uninstall wipes it. Disable/enable preserves data.
 
 ## Why we don't (yet) auto-fix this in Zed
@@ -87,7 +87,7 @@ data and uninstall wipes it. Disable/enable preserves data.
 The cleanest mitigation we ship is good docs (this file) plus the
 Open menu's behavior of falling back to in-app navigation
 (workspace start screen has Workspace + External sections that don't
-go through SAF, so the user can still get to recent projects and
+go through SAF, so the architect can still get to recent projects and
 known shared paths even when the picker is broken).
 
 ## See also

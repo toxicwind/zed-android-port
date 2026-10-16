@@ -12,7 +12,7 @@ are idempotent). This serves two purposes:
    entry has a non-empty subfolder when first browsed.
 2. The noexec-banner Copy-to-projects dialog (L9, see
    [noexec-banner-move.md](noexec-banner-move.md)) has a real
-   destination from the moment the user can interact.
+   destination from the moment the architect can interact.
 
 The L3c-era "Import from sdcard…" File-menu entry was removed in L9: it
 duplicated the standard Open flow but routed through a separate

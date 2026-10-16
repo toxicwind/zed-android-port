@@ -142,7 +142,7 @@ Settings, the runtime picker, and any other spawned window each open as their ow
 <a id="userland"></a>
 ## <img src="https://api.iconify.design/lucide:server.svg?color=%23999999&height=22" valign="middle" /> &nbsp;Userland
 
-The editor is bionic-linked and runs as the Android app process. Every subprocess it spawns (`bash`, `apt`, language servers, formatters, terminal shells, `git`, `ssh`) routes through whichever runtime adapter the user picked. Three adapters ship; they version independently of the editor APK.
+The editor is bionic-linked and runs as the Android app process. Every subprocess it spawns (`bash`, `apt`, language servers, formatters, terminal shells, `git`, `ssh`) routes through whichever runtime adapter the architect picked. Three adapters ship; they version independently of the editor APK.
 
 | Adapter | What it is | Where it comes from |
 |---|---|---|

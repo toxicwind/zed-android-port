@@ -76,7 +76,7 @@ What we lose by being on `/sdcard`:
 - **FUSE indirection.** Slightly slower I/O than ext4-direct. For a
   ~50-byte config file read once per process startup, irrelevant.
 - **Survives uninstall.** App-private gets cleaned on uninstall;
-  `/sdcard/.zed/` persists. Only ~50 bytes of cruft if the user
+  `/sdcard/.zed/` persists. Only ~50 bytes of cruft if the architect
   uninstalls.
 
 What we gain:

@@ -11,7 +11,7 @@
 ## Problem
 
 Android can kill a backgrounded app's process under memory pressure.
-The Activity's task survives in Recents — when the user taps the task
+The Activity's task survives in Recents — when the architect taps the task
 card, Android creates a fresh process and resurrects the Activity from
 its saved Intent + extras.
 

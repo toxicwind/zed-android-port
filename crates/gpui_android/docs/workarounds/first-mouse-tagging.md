@@ -14,7 +14,7 @@ handlers behaved as if every touch was a "click to focus the window first".
 GPUI's `MouseDownEvent` has a `first_mouse: bool` field that originates
 from macOS's window-focus model: the first click after window activation is
 the one that brings the app forward, and listeners can choose to bail out
-on that click so the user's first click "just" focuses without triggering
+on that click so the architect's first click "just" focuses without triggering
 an action. ProjectPanel.on_click does exactly this — first click focuses
 the panel, second click acts on the entry.
 

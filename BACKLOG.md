@@ -50,7 +50,7 @@ If we see a new-window spawn line, the fix is to force `OpenMode::Activate` to r
 
 ## Reported via the @-mention bug-can't-be-filed loop (2026-05-13)
 
-External user tried to file these and was blocked by upstream Zed's `blank_issues_enabled: false` + Discord-redirect contact_links (fixed in `244f29a455`). Logging here so they don't get lost while the user re-files via the new templates.
+External user tried to file these and was blocked by upstream Zed's `blank_issues_enabled: false` + Discord-redirect contact_links (fixed in `244f29a455`). Logging here so they don't get lost while the architect re-files via the new templates.
 
 - **Mouse scroll direction reversed**: Samsung One UI + Bluetooth mouse. Scroll works correctly everywhere else on the device but is inverted in Zdroid. Likely a sign flip in `gpui_android`'s `MotionEvent` → scroll-delta translation. Check the wheel-axis path specifically (touch-pad two-finger scroll may differ); One UI may report `AXIS_VSCROLL` with a sign that mainline Zed doesn't compensate for. **Still open.**
 - ~~**Vim mode broken**~~ — **fixed in 29b29ddd63** (key events now route from `ExtraWindowActivity` to gpui via `nativeOnExtraKeyEvent` JNI bridge; the root cause was that any extra window's `dispatchKeyEvent` was never forwarded so `PlatformInput::KeyDown` never fired). Vim and any other editor in a non-Main window now accepts typing.
@@ -58,11 +58,11 @@ External user tried to file these and was blocked by upstream Zed's `blank_issue
 
 ## Runtime picker: adapter install-state UX (deferred)
 
-The onboarding runtime-picker section (and the Settings page entry) currently presents all three adapters — Kali chroot, Bootstrap, External Termux — as selectable equals. On a fresh install the user almost certainly has NONE of them installed:
+The onboarding runtime-picker section (and the Settings page entry) currently presents all three adapters — Kali chroot, Bootstrap, External Termux — as selectable equals. On a fresh install the architect almost certainly has NONE of them installed:
 
 - **Chroot** requires Magisk + the `zdroid-spawnd` Magisk module (separate flashable zip from GitHub releases) + a Kali NetHunter chroot rootfs at `/data/local/nhsystem/kali-arm64`. None of those are bundled in our APK.
 - **Bootstrap** requires the bootstrap zip (~240 MB) extracted into `$PREFIX`. Auto-extracted from the APK asset today, but per task #17 we're moving to GitHub-release download. If the asset isn't present, "Bootstrap" doesn't work either.
-- **External Termux** requires the Termux app installed on the device AND the user granting `com.termux.permission.RUN_COMMAND`. Plus our JNI Intent bridge (task #36) needs to land.
+- **External Termux** requires the Termux app installed on the device AND the architect granting `com.termux.permission.RUN_COMMAND`. Plus our JNI Intent bridge (task #36) needs to land.
 
 The picker doesn't surface any of this. A user tapping "Bootstrap" with no bootstrap installed sees: their selection saved, restart Zdroid, nothing works, no actionable feedback. Same for chroot without the Magisk module. Worst-case UX.
 
@@ -90,7 +90,7 @@ Resolve this AFTER the Termux-divestment refactor (tasks #74-80) lands. Once eac
 Tapping the settings search bar on Android doesn't bring up the soft keyboard and the Editor never receives input events. Probe instrumentation in `crates/settings_ui/src/settings_ui.rs` shows:
 
 - Editor entity is created (we see `editor created` at boot)
-- A `Blurred` event fires after the user taps, but no `Focused` event reaches the subscribe handler
+- A `Blurred` event fires after the architect taps, but no `Focused` event reaches the subscribe handler
 - No `InputHandled` / `InputIgnored` / `Edited` events
 
 So the Editor IS getting focused (Blurred can only fire after a Focused state), but the focus is being stolen immediately, AND the Android InputMethodManager (soft keyboard) is not being prompted. Two suspected layers:
@@ -126,7 +126,7 @@ Visible workaround for users today: there isn't one — search filter is effecti
 
 **Scope estimate:** ~200 LoC in `crates/gpui_android/src/clipboard.rs` plus ~30 LoC of JNI helpers. `ContentResolver.openInputStream` is one of the fiddlier JNI surfaces; the `InputStream` object needs an `available()` + `read(byte[])` loop or `Channels.newChannel`. Single-file change otherwise. Half a day if the JNI byte-read path lines up first try, full day if we trip ANR-territory issues on big screenshots.
 
-**Why deferred:** core editor flow works without it, and the agent panel feature gating depends on `supports_images` from the LLM provider anyway. Pick up once a user reports a concrete blocked workflow.
+**Why deferred:** core editor flow works without it, and the agent panel feature gating depends on `supports_images` from the LLM provider anyway. Pick up once an architect reports a concrete blocked workflow.
 
 ## MCP / context-server integration is absent on Android
 
@@ -191,7 +191,7 @@ The `android-activity` crate (which we use) wraps a subset of GameActivity APIs.
 3. **Phase 3: Composing text** for Pinyin / Japanese / Korean IMEs. Wire `GameTextInputState`'s composing region into gpui's marked-text APIs (`replace_and_mark_text_in_range`).
 4. **Phase 4: Selection sync.** Push current Editor cursor / surrounding-text via `GameActivity_setTextInputState` so soft-keyboard predictive suggestions are accurate. Requires gpui Editor to expose surrounding-text-at-cursor.
 
-**Scope estimate:** 3-5 days end-to-end for phases 1+2 (the user-visible v1: "soft keyboard appears, typing works"). Phases 3-4 are polish, can ship in a follow-up.
+**Scope estimate:** 3-5 days end-to-end for phases 1+2 (the architect-visible v1: "soft keyboard appears, typing works"). Phases 3-4 are polish, can ship in a follow-up.
 
 **Why deferred:** unblocks the touch-only demographic but hardware-keyboard users (the daily-driver case so far) are unaffected. First external feature request named this. Adjacent: see [README's "What doesn't work yet"](README.md) which already lists this as a known gap; the README + this entry need to stay in sync.
 

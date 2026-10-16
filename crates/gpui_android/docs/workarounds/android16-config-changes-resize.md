@@ -13,7 +13,7 @@ the Activity** on every config change. Default behavior would be:
 1. User drags the resize handle on the Settings window
 2. Activity destroyed → `onDestroy` → JNI `nativeOnExtraActivityDestroyed`
    → `OsClosed` event posted to gpui
-3. gpui drops the Window — the user's Settings UI vanishes mid-resize
+3. gpui drops the Window — the architect's Settings UI vanishes mid-resize
 4. New Activity instance launches with same Intent → tries to re-attach to
    a Window gpui has already torn down
 5. Window stays gone. User just lost their settings dialog by *resizing it*.

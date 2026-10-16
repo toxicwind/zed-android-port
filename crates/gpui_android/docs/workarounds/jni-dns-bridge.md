@@ -20,7 +20,7 @@ that:
 1. Misses Android's actual DNS config — corporate networks, Pi-hole on
    home WiFi, mobile carrier DNS, Private DNS over TLS — all bypassed.
 2. Goes stale when user switches WiFi / mobile / VPN.
-3. Routes traffic away from the user's chosen DNS provider, possibly
+3. Routes traffic away from the architect's chosen DNS provider, possibly
    violating their policy.
 
 The right move is to mirror **whatever Android is actually using** for
@@ -58,7 +58,7 @@ repeatedly (e.g. on `MainEvent::ConfigChanged` if we ever wire that).
   packet path as bionic would have done — just bypasses bionic's
   resolver wrapper.
 - Falls back to public DNS = "graceful degradation": the tool launches
-  but might resolve through Cloudflare/Google instead of the user's
+  but might resolve through Cloudflare/Google instead of the architect's
   preferred resolver.
 
 ## Failure modes if regressed

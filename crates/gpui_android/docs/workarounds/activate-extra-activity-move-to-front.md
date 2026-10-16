@@ -8,7 +8,7 @@
 
 ## Problem
 
-When the user has an extra window open (e.g. Settings) but it's in the
+When the architect has an extra window open (e.g. Settings) but it's in the
 background, tapping Zed → Settings → Open Settings again silently no-ops.
 Production code's dedup at `settings_ui.rs:622-647` correctly finds the
 existing `SettingsWindow` and calls `window.activate_window()`, but on

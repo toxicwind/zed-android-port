@@ -82,7 +82,7 @@ multi-finger gestures (two-finger swipe → `ACTION_SCROLL`). In
 **regular tablet mode** (which is the default Zed launches into),
 Samsung's trackpad driver treats the trackpad as a single-finger
 mouse pointer device — `pointer_count` is always 1 regardless of
-how many fingers the user puts down, and `ACTION_SCROLL` is never
+how many fingers the architect puts down, and `ACTION_SCROLL` is never
 synthesized for trackpad gestures.
 
 Verified by:

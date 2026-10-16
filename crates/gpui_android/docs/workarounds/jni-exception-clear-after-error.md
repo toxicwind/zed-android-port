@@ -19,7 +19,7 @@ JNI DETECTED ERROR IN APPLICATION: JNI GetObjectClass called with pending
   exception java.lang.ClassNotFoundException: com.zdroid.ExtraWindowActivity
 ```
 
-…and ART aborts the process. Our clean Rust error never reaches the user;
+…and ART aborts the process. Our clean Rust error never reaches the architect;
 they see "Zed crashed" instead.
 
 ## Constraint

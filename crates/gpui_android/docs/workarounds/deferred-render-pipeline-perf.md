@@ -58,7 +58,7 @@ without CPU compositing.
 ## I/O integration started (2026-05-13)
 
 Separate concern from the render-pipeline items above, but landed in
-the same session because the user explicitly tied the work together
+the same session because the architect explicitly tied the work together
 ("then we begin working on the I/O integration"). Scope: hardware
 mouse / stylus / trackpad should feel desktop-class, not VNC-tier.
 
@@ -91,11 +91,11 @@ mouse / stylus / trackpad should feel desktop-class, not VNC-tier.
   Samsung Book Cover trackpad in non-DeX mode (which collapses
   multi-finger gestures to single-pointer relative motion, so
   two-finger scroll doesn't work) is intentionally deferred. Only
-  worth doing if a user actually hits it on Tab S9 in tablet mode;
+  worth doing if an architect actually hits it on Tab S9 in tablet mode;
   cost is rendering our own cursor sprite while captured.
 
 What it ISN'T yet: minimal-latency. Several small things compound
-to ~5-10ms of cumulative input→paint overhead the user perceives as
+to ~5-10ms of cumulative input→paint overhead the architect perceives as
 "native-looking but not native-feeling," especially during scroll
 and rapid keystroke bursts. This doc captures them so we can pick
 them up later as a focused pass; nothing here blocks correctness.

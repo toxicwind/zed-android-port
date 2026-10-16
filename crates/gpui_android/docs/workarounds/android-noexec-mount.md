@@ -53,7 +53,7 @@ land on the noexec mount in the first place:
   style `~/storage/*` symlinks but never as a workspace root.
 - SAF picks become a one-shot recursive copy into `~/projects/<basename>` —
   see [projects-workspace-import.md](projects-workspace-import.md).
-- If a user opens a project from /sdcard anyway, the title bar shows a
+- If an architect opens a project from /sdcard anyway, the title bar shows a
   "Builds won't run · Move" chip with one-tap fix — see
   [noexec-banner-move.md](noexec-banner-move.md).
 

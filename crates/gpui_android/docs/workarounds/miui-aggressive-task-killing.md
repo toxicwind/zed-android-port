@@ -11,7 +11,7 @@ firing the SAF picker (`Open` menu), tapping any system dialog
 (permission prompt, picker), or pressing Home backgrounds Zed and the
 OS kills the process within seconds. Returning to Recents shows the
 Zed card, but tapping it cold-restarts the whole Termux bootstrap
-because the process was killed — the user perceives this as "the app
+because the process was killed — the architect perceives this as "the app
 just exits".
 
 logcat from the device confirms the cause:
@@ -36,7 +36,7 @@ reclaim.
 Not Zed. MIUI / HyperOS ships a `SmartPower` service that ranks all
 running apps by user-engagement score and force-stops anything not
 on its always-allow list. New installs default to **Restricted**
-unless the user explicitly opts the app into **No restrictions** in
+unless the architect explicitly opts the app into **No restrictions** in
 the per-app battery settings.
 
 This affects every Android app, not just ours. It's particularly

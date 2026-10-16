@@ -19,7 +19,7 @@ window:
 
 - **Hover-to-show scrollbar** — moving the mouse pointer (no button
   pressed) into a scrollable region doesn't fade the thumb in. The
-  scrollbar only appears once the user clicks somewhere, after which
+  scrollbar only appears once the architect clicks somewhere, after which
   the scrollbar autohide state machine treats the click as a hover and
   shows it for the standard 1500ms.
 - **Mouse wheel + trackpad two-finger scroll** — both produce no scroll

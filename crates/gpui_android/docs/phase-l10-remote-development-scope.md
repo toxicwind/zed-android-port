@@ -125,7 +125,7 @@ Compile works, runtime untested. The big unknowns:
   `curl` on the Android client too — both would come with the
   openssh apt install).
 - Whether the protobuf RPC stays alive across Android's
-  background-app lifecycle. If the user backgrounds Zed, the SSH
+  background-app lifecycle. If the architect backgrounds Zed, the SSH
   subprocess might get killed — we'd lose the connection. The
   `with_active_or_new_workspace` patch handles modal routing, but
   the underlying SSH process is a separate concern.
@@ -134,7 +134,7 @@ Compile works, runtime untested. The big unknowns:
 
 The `remote_server` *target* runs on the remote, not the Android
 client. So we don't need to cross-compile it for Android — we need
-the Linux x86_64 / aarch64 / arm64 binaries that match the user's
+the Linux x86_64 / aarch64 / arm64 binaries that match the architect's
 remote host. Production Zed publishes those to its CDN and the
 fetch logic at `crates/remote/src/transport/ssh.rs:872-915`
 auto-discovers the right one. Our Android client doesn't change
@@ -176,7 +176,7 @@ our side.
 
 - VS Code Server / Remote Tunnel via Microsoft's protocol — Zed has
   its own protocol and we'd need a translator. Not worth
-  implementing; the user's framing was "Zed remote, like
+  implementing; the architect's framing was "Zed remote, like
   code-server but Zed-native".
 - DAP / debugger over SSH — DAP is feature-flagged out on Android
   entirely, so debugger-over-remote inherits that.

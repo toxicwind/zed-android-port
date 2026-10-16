@@ -14,7 +14,7 @@ picker open inside it. Tapping inside that duplicate Workspace crashed.
 
 After dismissing the duplicate + Settings, opening the theme picker again
 "did nothing" — actually it spawned yet another duplicate Workspace in the
-background that the user couldn't see. Same pattern for command palette,
+background that the architect couldn't see. Same pattern for command palette,
 recent projects picker, keymap editor, settings profile selector, devcontainer
 launcher, etc. — anything routed via `with_active_or_new_workspace`.
 
@@ -42,7 +42,7 @@ sees a duplicate Zed in OS chrome.
 
 We always have **exactly one** Workspace alive on Android (the primary
 GameActivity-hosted one). The desktop notion of "if active isn't a
-workspace, the user wants a new one" is wrong here — they always want the
+workspace, the architect wants a new one" is wrong here — they always want the
 existing primary.
 
 ## Solution

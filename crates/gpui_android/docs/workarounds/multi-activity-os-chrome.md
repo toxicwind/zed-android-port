@@ -21,7 +21,7 @@ GameActivity exposes exactly one `ANativeWindow` so any second
 L6 worked around it by stuffing extra `SurfaceView`s into MainActivity's
 `FrameLayout` (each carrying its own `ANativeWindow`), but those overlays are
 borderless rectangles floating inside the primary Activity. **No chrome, no
-close X, no drag bar, no resize handles.** Settings opens and the user has
+close X, no drag bar, no resize handles.** Settings opens and the architect has
 no way to dismiss it.
 
 ## Constraint

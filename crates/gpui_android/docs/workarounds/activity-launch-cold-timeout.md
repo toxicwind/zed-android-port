@@ -29,7 +29,7 @@ Gen 2 measured at:
 
 The 2-second outliers happen when Android is doing transition / app-kill
 work concurrently. So a 500ms or 1000ms timeout fires too eagerly. A 5s+
-timeout risks the game thread freeze the user notices as input lag.
+timeout risks the game thread freeze the architect notices as input lag.
 
 Warm reopens (Activity already alive in Recents from a recent open):
 ~50-100ms. Trivial.
@@ -71,7 +71,7 @@ try again"). Better than a 4s freeze followed by a ghost window.
 - 4s is below Android's 5s ANR threshold for input dispatch.
 - Warm reopens are 50-100ms so the cap only matters on first cold open per
   process lifetime.
-- If we genuinely hit it, the user retries — the second tap is warm and
+- If we genuinely hit it, the architect retries — the second tap is warm and
   will succeed.
 
 ## Failure mode if regressed

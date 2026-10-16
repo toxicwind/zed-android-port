@@ -24,7 +24,7 @@ root.key_context(workspace.key_context(cx))
 
 Our example was rendering `Workspace` directly as the window root, skipping
 `MultiWorkspace`. So no Workspace KeyContext was ever set, no Workspace-gated
-bindings ever matched, and the user's keypresses fell through to the no-op
+bindings ever matched, and the architect's keypresses fell through to the no-op
 default branch.
 
 Separately: the keymap loader runs through registered actions to bind them

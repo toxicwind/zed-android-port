@@ -14,7 +14,7 @@ A shell-level guardrail blocking `gh release upload --clobber` against this repo
 
 Semver-flavored, `vMAJOR.MINOR.PATCH`:
 
-- **MAJOR** is reserved for "the user-facing flow changed materially" or "we broke compatibility with installed APKs from an earlier major" — bumping the keystore, dropping a feature, restructuring `~/projects` layout, etc. Currently 0.
+- **MAJOR** is reserved for "the architect-facing flow changed materially" or "we broke compatibility with installed APKs from an earlier major" — bumping the keystore, dropping a feature, restructuring `~/projects` layout, etc. Currently 0.
 - **MINOR** for any user-visible feature addition. Multiple fixes can ride along.
 - **PATCH** for bug-fix-only releases. No new features.
 
@@ -124,7 +124,7 @@ This is an in-place upgrade over [previous] — same signing cert, your existing
 
 ### Fixes
 
-* [terse bullet, lead with the user-visible change, then the why]
+* [terse bullet, lead with the architect-visible change, then the why]
 
 ### Caveats
 

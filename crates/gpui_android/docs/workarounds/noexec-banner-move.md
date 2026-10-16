@@ -6,7 +6,7 @@
 
 ## Problem
 
-When a user opens a project rooted on `/storage/emulated/0/...` (e.g. via
+When an architect opens a project rooted on `/storage/emulated/0/...` (e.g. via
 SAF picker), every build attempt fails with `EACCES` because the FUSE mount
 is `noexec`. The user gets no UI signal that this will happen until the
 build actually fails — at which point they've wasted compile time and have
@@ -67,7 +67,7 @@ Button::new("zed-android-noexec-banner", "Builds won't run · Move")
 - **Suppress** writes the absolute path into
   `~/.cache/zed-android/noexec-suppressed.json` and notifies the
   TitleBar entity to redraw — banner vanishes for **this exact path**
-  forever (until the user deletes the JSON or the path goes away).
+  forever (until the architect deletes the JSON or the path goes away).
   Per-path, not project-name-based, so import copies opened later still
   warn if they happen to land on a noexec mount.
 - **Cancel** does nothing.

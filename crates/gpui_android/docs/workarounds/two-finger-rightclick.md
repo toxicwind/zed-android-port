@@ -9,9 +9,9 @@
 
 Touchscreens have no right mouse button. The first attempt was long-press
 → right click, but it interfered with text selection in the terminal (and
-any element where the user wanted to select text first and then invoke a
+any element where the architect wanted to select text first and then invoke a
 context menu): the synthesized `Down(Left)` cleared the prior selection
-before the synthesized `Down(Right)` could show the menu, so the user got
+before the synthesized `Down(Right)` could show the menu, so the architect got
 the menu but their selection was gone.
 
 ## Constraint

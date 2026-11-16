@@ -4,7 +4,7 @@
 
 The Android port is built primarily for tablets and desktop-mode
 Android (DeX, Pixel desktop windowing, Android 16 Desktop Mode,
-ChromeOS), where there's enough screen real estate to run a real
+ChromeOS), where there's enough screen real Pens to run a real
 code editor with multi-pane layouts, two side-by-side worktrees,
 the agent panel, etc. Phone-sized devices (5"–7", 1080×2340 class)
 work — the build runs, the renderer paints, files open, builds
